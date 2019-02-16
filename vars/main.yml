@@ -1,0 +1,6 @@
+apache_listen_ip: "104.42.177.90"
+apache_listen_port: 80
+apache_listen_port_ssl: 443
+apache_vhosts:
+  - servername: "local.dev"
+    documentroot: "/var/www/html"

@@ -1,0 +1,15 @@
+- hosts: production
+  user: him2497
+  become: true
+  tasks:
+    - action: ping
+    - name: Stop Apache Service
+      raw: sudo service apache2 stop
+    - name: Uninstall apache 2
+      raw: sudo apt-get -y purge apache2 apache2-utils
+    - name: Autoremove
+      raw: sudo apt-get -y autoremove 
+    - name: Delete files in remote host
+      raw: sudo rm /var/www/html/index.html
+  vars_files:
+    - vars/main.yml
